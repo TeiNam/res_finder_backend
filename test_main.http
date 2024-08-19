@@ -1,0 +1,23 @@
+### 환경 변수 설정
+@baseUrl = http://localhost:8000
+
+### 주변 가게 조회
+GET http://localhost:8000/api/v1/stores/nearby?longitude=126.9179947&latitude=37.5283338&max_distance=5000
+
+### 환경 변수를 사용한 주변 가게 조회 (선택적)
+# @name getNearbyStores
+GET {{baseUrl}}/api/v1/stores/nearby
+    ?longitude={{longitude}}
+    &latitude={{latitude}}
+    &max_distance={{maxDistance}}
+
+### 응답 확인 (선택적)
+GET {{baseUrl}}/docs
+
+### 서버 상태 확인 (선택적, 엔드포인트가 있다면)
+GET {{baseUrl}}/health
+
+
+### Update store location
+POST http://localhost:8000/update-location?store_code=TPAY_YJHMN430
+Content-Type: application/json
