@@ -32,7 +32,7 @@ GET http://localhost:8000/api/v1/geocoding/coordinates?address=서울특별시 �
 GET http://localhost:8000/api/v1/geocoding/coordinates?address=존재하지 않는 주소
 
 ### 상점명으로 위경도 정보 가져오기
-GET http://localhost:8000/api/v1/geocoding/store_coordinates?store_name=백소정 여의도점
+GET http://localhost:8000/api/v1/geocoding/store_coordinates?store_name=차이홍 롯데아울렛광교점
 
 ### 상점명으로 위경도 정보 가져오기 (DB 업데이트 포함)
-GET http://localhost:8000/api/v1/geocoding/store_coordinates?store_name=백소정 여의도점&update_db=true
+GET http://localhost:8000/api/v1/geocoding/store_coordinates?store_name=차이홍 롯데아울렛광교점&update_db=true
