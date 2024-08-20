@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from config import settings
-from api.endpoints import stores
+from api.endpoints import stores, geocoding
 from utils.json_encoder import parse_json
 
 app = FastAPI()
@@ -16,6 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(stores.router, prefix="/api/v1/stores")
+app.include_router(geocoding.router, prefix="/api/v1/geocoding")
 
 
 @app.exception_handler(Exception)

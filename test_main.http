@@ -21,3 +21,18 @@ GET {{baseUrl}}/health
 ### Update store location
 POST http://localhost:8000/update-location?store_code=TPAY_YJHMN430
 Content-Type: application/json
+
+### 위경도 정보만 가져오기 (GET 방식)
+GET http://localhost:8000/api/v1/geocoding/coordinates?address=전북 익산시 부송동 100
+
+### 다른 주소로 테스트 (GET 방식)
+GET http://localhost:8000/api/v1/geocoding/coordinates?address=서울특별시 강남구 테헤란로 152
+
+### 잘못된 주소로 테스트 (404 에러 예상)
+GET http://localhost:8000/api/v1/geocoding/coordinates?address=존재하지 않는 주소
+
+### 상점명으로 위경도 정보 가져오기
+GET http://localhost:8000/api/v1/geocoding/store_coordinates?store_name=백소정 여의도점
+
+### 상점명으로 위경도 정보 가져오기 (DB 업데이트 포함)
+GET http://localhost:8000/api/v1/geocoding/store_coordinates?store_name=백소정 여의도점&update_db=true
